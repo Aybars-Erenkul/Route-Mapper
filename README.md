@@ -4,13 +4,12 @@
 Route Mapper visualizes the traceroute process to a target domain.
 Here is the basic idea divided by steps:
 ```
-Performs a traceroute on the target domain
-Each IP's Country, Region and Organization data is pulled using IP-API
-Stores the data in a .csv file
-Reads the .csv file using pandas module
-Creates a network node for each line in file
-Saves the created network parameters in a .html file using PyVis
-
+1) Performs a traceroute on the target domain using scapy
+2) Each IP's Country, Region and Organization data is pulled using IP-API
+3) Stores the data in a .csv file
+4) Reads the .csv file using pandas module
+5) Creates a network node for each line in file
+6) Saves the created network parameters in a .html file using PyVis
 ```
 
 <img src="https://user-images.githubusercontent.com/90629653/222931201-0988a135-0f88-4719-808d-c325cb42f39e.png" width=459 height=311>
