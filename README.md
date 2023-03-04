@@ -25,3 +25,7 @@ requests==2.28.2
 scapy==2.5.0
 
 ```
+
+## Note
+
+For easier readability, this program does not include private addresses. If you'd like to include them, just remove the ``` if country != None: ``` condition
