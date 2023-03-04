@@ -28,4 +28,4 @@ scapy==2.5.0
 
 ## Note
 
-For easier readability, this program does not include private addresses. If you'd like to include them, just remove the ``` if country != None: ``` condition
+For easier readability, this program does not include private addresses. If you'd like to include them, just remove the condition ``` if country != None: ``` 
