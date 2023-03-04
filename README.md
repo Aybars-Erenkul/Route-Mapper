@@ -1,7 +1,17 @@
 # Route-Mapper
 ![Made With Python](http://ForTheBadge.com/images/badges/made-with-python.svg) ![Made with love](http://ForTheBadge.com/images/badges/built-with-love.svg)
 
-A program to visualize the traceroute process to a target domain.
+Route Mapper visualizes the traceroute process to a target domain.
+Here is the basic idea divided by steps:
+```
+Performs a traceroute on the target domain
+Each IP's Country, Region and Organization data is pulled using IP-API
+Stores the data in a .csv file
+Reads the .csv file using pandas module
+Creates a network node for each line in file
+Saves the created network parameters in a .html file using PyVis
+
+```
 
 <img src="https://user-images.githubusercontent.com/90629653/222931201-0988a135-0f88-4719-808d-c325cb42f39e.png" width=459 height=311>
 
