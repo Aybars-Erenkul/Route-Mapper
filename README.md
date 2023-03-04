@@ -11,7 +11,7 @@ A program to visualize the traceroute process to a target domain.
 
 python route_mapper.py
 
-Enter target hostname: (ex: google.com) : 
+Enter target hostname (ex: google.com): 
 
 ```
 
