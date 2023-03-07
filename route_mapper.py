@@ -3,8 +3,8 @@ from scapy.layers.inet import traceroute
 import pandas as pd
 import csv
 from pyvis.network import Network
-
 import requests
+import ip_scraper
 
 
 def get_ip():
@@ -22,7 +22,12 @@ def get_location(ip):
 
 
 
-target = input("Enter target hostname: (ex: google.com) : ")
+target = input("Enter target hostname (ex: google.com): ")
+ask_extras = input("Do you want to include IP's that the website is communicating as well ? (y/n): ")
+if ask_extras == 'y':
+    extras = True
+else:
+    extras = False
 hostname = [target]
 
 result, unans = traceroute(hostname, maxttl=30)
@@ -43,7 +48,9 @@ got_data = pd.read_csv("traceroute.csv")
 
 net = Network()
 i = 1
+nodeLength = 0
 for i in range(len(got_data)):
+    nodeLength = nodeLength + 1
     if type(got_data["COUNTRY"][i]) == float:
         net.add_node(got_data["IP"][i] + "\n" + "Country Not Found")
     else:
@@ -61,4 +68,13 @@ for i in range(len(got_data)):
             else:
                 net.add_edge(got_data["IP"][i] + "\n" + "Country Not Found", got_data["IP"][i-1] + "\n" + "Country Not Found")
             pass
+
+if extras == True:
+    ip_scraper.ip_gatherer(target)
+    got_extras = pd.read_csv("extras.csv")
+    for i in range(len(got_extras)):
+        net.add_node(got_extras["IP"][i],title=got_extras["URI"][i] ,color="green")
+        net.add_edge(got_data["IP"][nodeLength-1] + "\n" + got_data["COUNTRY"][nodeLength-1] + "\n" + got_data["CITY"][nodeLength-1], got_extras["IP"][i])
+else:
+    pass
 net.show("route.html", notebook=False)
