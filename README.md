@@ -10,6 +10,22 @@ Here is the basic idea divided by steps:
 4) Reads the .csv file using pandas module
 5) Creates a network node for each line in file
 6) Saves the created network parameters in a .html file using PyVis
+
+Optionally, Route Mapper can also scrape the website for any additional 
+IP addresses that the website is communicating with for various purposes such as fonts, js, SEO).
+
+This is accomplished by taking these steps:
+1) Uses the requests module to get the website's source code.
+
+2) The source-code of the page is scraped via bs4 to check any external connections the website is making.
+
+3) Passes the found URIs to a DNS Query function to get the corresponding IP addresses.
+
+4) Stores the URI and the IP datas to a seperate .csv file
+
+4) Reads from the .csv file, then create a node for each IP address.
+
+5) Adds and connects new nodes for visualization.
 ```
 
 
