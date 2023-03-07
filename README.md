@@ -17,12 +17,12 @@ Here is the basic idea divided by steps:
 This is accomplished by taking these steps:
 
 ```
-1) Uses the requests module to get the website's source code.
-2) The source-code of the page is scraped via bs4 to check any external connections the website is making.
-3) Passes the found URIs to a DNS Query function to get the corresponding IP addresses.
+1) Uses the requests module to get the website's source code
+2) The source-code of the page is scraped via bs4 to check any external connections the website is making
+3) Passes the found URIs to a DNS Query function to get the corresponding IP addresses
 4) Stores the URI and the IP datas to a seperate .csv file
-4) Reads from the .csv file, then create a node for each IP address.
-5) Adds and connects new nodes for visualization.
+4) Reads from the .csv file, then create a node for each IP address
+5) Adds and connects new nodes for visualization
 ```
 
 
