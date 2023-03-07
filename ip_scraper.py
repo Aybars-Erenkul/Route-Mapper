@@ -4,7 +4,7 @@ import bs4
 import dns_seeker
 import csv
 
-def ip_gatherer(target="yavuzertugrul.com"):
+def ip_gatherer(target="default.com"):
     with open("extras.csv", "w") as csvfile:
         writer = csv.writer(csvfile)
         writer.writerow(["URI", "IP"])
