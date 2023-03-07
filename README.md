@@ -26,7 +26,7 @@ This is accomplished by taking these steps:
 ```
 
 
-<img src="https://user-images.githubusercontent.com/90629653/223468455-ae0f23ff-e86c-46fe-8201-f968436cbb0c.png" width=628 height=391>
+<img src="https://user-images.githubusercontent.com/90629653/223468455-ae0f23ff-e86c-46fe-8201-f968436cbb0c.png" width=838 height=522>
 
 ## Usage
 
