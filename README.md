@@ -12,7 +12,6 @@ Here is the basic idea divided by steps:
 6) Saves the created network parameters in a .html file using PyVis
 ```
 
-<img src="https://user-images.githubusercontent.com/90629653/222931201-0988a135-0f88-4719-808d-c325cb42f39e.png" width=459 height=311>
 
 <img src="https://user-images.githubusercontent.com/90629653/223468455-ae0f23ff-e86c-46fe-8201-f968436cbb0c.png" width=628 height=391>
 
