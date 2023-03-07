@@ -39,10 +39,13 @@ with open("traceroute.csv", "w") as csvfile:
     for snd, rcv in result:
         print(rcv.src)
         country, city, org = get_location(rcv.src)
-        print(f"Now Printing city for {country}")
+        #print(f"Now Printing city for {country}")
         if country != None:
-            print(country)
-            writer.writerow([rcv.src, country, str(city).encode("utf-8").decode("windows-1252"), org])
+            #print(city)
+            if org == '':
+                writer.writerow([rcv.src, country, str(city).encode("utf-8").decode("windows-1252"), "Organization Not Found"])
+            else:
+                writer.writerow([rcv.src, country, str(city).encode("utf-8").decode("windows-1252"), org])
 
 got_data = pd.read_csv("traceroute.csv")
 
@@ -54,7 +57,9 @@ for i in range(len(got_data)):
     if type(got_data["COUNTRY"][i]) == float:
         net.add_node(got_data["IP"][i] + "\n" + "Country Not Found")
     else:
-        net.add_node(got_data["IP"][i] + "\n" + got_data["COUNTRY"][i] + "\n" + got_data["CITY"][i] ,title=got_data["ORG"][i])
+        net.add_node(got_data["IP"][i] + "\n" + got_data["COUNTRY"][i] + "\n" + got_data["CITY"][i] , title=got_data["ORG"][i])
+        #print("Title is: ", got_data["ORG"][i])
+        #temp = input("Continue ?")
         #print(type(got_data["COUNTRY"][i]))
     if i != 0:
         if type(got_data["COUNTRY"][i]) != float:
