@@ -36,5 +36,5 @@ def seek_dns(target, finalResult=' '):
     
 
 if __name__ == "__main__":
-    res = seek_dns("ankyra.cc.metu.edu.tr")
+    res = seek_dns("")
     print(res)
