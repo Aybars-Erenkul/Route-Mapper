@@ -1,6 +1,8 @@
 # Route-Mapper
 ![Made With Python](http://ForTheBadge.com/images/badges/made-with-python.svg) ![Made with love](http://ForTheBadge.com/images/badges/built-with-love.svg)
 
+If you're interested, I've explained how this works in detail ![here](https://aybars-erenkul.github.io/A/RouteMapper)
+
 Route Mapper visualizes the traceroute process to a target domain.
 Here is the basic idea divided by steps:
 ```
